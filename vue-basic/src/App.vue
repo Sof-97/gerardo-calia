@@ -3,6 +3,9 @@
     <header>
       <nav-bar></nav-bar>
     </header>
+    <main class="container mx-auto">
+      gigione
+    </main>
   </div>
 </template>
 
