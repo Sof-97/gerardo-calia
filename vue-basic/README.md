@@ -1,4 +1,4 @@
-# gerardo-calia
+# vue-basic
 
 ## Project setup
 ```
