@@ -23,10 +23,11 @@
 		data() {
 			return {};
 		},
-		methods: {},
+		methods: {
+		},
 		mounted() {
 			window.onscroll = function () {
-				if (scrollY > 120) {
+				if (scrollY > 150) {
 					const socialX = document.getElementById("socialX");
 					const socialY = document.getElementById("socialY");
 
@@ -41,12 +42,12 @@
 					});
 					const observerY = new IntersectionObserver(entries => {
 						entries.forEach(entry => {
-							setTimeout(()=>{
+							setTimeout(() => {
 								entry.target.classList.remove("hidden", entry.isIntersecting);
 								entry.target.classList.add("focus-in-expand", entry.isIntersecting);
-							},1000)
+							}, 1000);
 						}),
-						console.log(entries);
+							console.log(entries);
 					});
 					observerY.observe(socialY);
 					observerX.observe(socialX);
@@ -70,22 +71,22 @@
 		transform: rotate(90deg);
 	}
 	#socialX {
-		transform: translate(0,0);
+		transform: translate(0, 0);
 		transform: rotate(90deg);
 		left: 200px;
-		bottom: -20%;
+		bottom: -25vh;
 		svg {
 			transform: rotate(-90deg);
 		}
 	}
-	#socialY{
+	#socialY {
 		transform: translate(1.5rem, 0);
 	}
 
 	//ANIMATION BLUR HORIZONTAL
 	.blur-out-contract {
-		-webkit-animation: blur-out-contract 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-		animation: blur-out-contract 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+		-webkit-animation: blur-out-contract 0.9s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+		animation: blur-out-contract 0.9s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 	}
 	@-webkit-keyframes blur-out-contract {
 		0% {
@@ -100,7 +101,7 @@
 	}
 	@keyframes blur-out-contract {
 		0% {
-			transform: translate(0,0px) rotate(90deg);
+			transform: translate(0, 0px) rotate(90deg);
 			-webkit-filter: blur(0.01);
 			filter: blur(0.01);
 		}
