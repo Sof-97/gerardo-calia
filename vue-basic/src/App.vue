@@ -3,8 +3,12 @@
 		<header class="flex justify-end mt-5 mr-5">
 			<nav-bar></nav-bar>
 		</header>
-		<main class="container min-h-full flex justify-center items-center">
-			<h1 class="font-bold text-7xl mt-72 text-emerald-500 ml-8 md:ml-0"><span>Gerardo </span>Calia</h1>
+		<main class="m-0 min-h-full flex items-center">
+			<div class="flex flex-col mt-40 ml-52">
+				<h2 class="text-3xl text-white font-bold">Hello. I am</h2>
+				<h1 class="font-bold text-7xl md:ml-0"><span>Gerardo </span>Calia</h1>
+				<developer-comp></developer-comp>
+			</div>
 		</main>
 		<email-comp class="email fixed"></email-comp>
 		<social-comp id="socialY" class="social fixed hidden"></social-comp>
@@ -16,15 +20,15 @@
 	import NavBar from "./components/NavBar.vue";
 	import EmailComp from "./components/EmailComp.vue";
 	import SocialComp from "./components/SocialComp.vue";
+	import DeveloperComp from "./components/DeveloperComp.vue";
 
 	export default {
-		components: { NavBar, EmailComp, SocialComp },
+		components: { NavBar, EmailComp, SocialComp, DeveloperComp },
 		name: "App",
 		data() {
 			return {};
 		},
-		methods: {
-		},
+		methods: {},
 		mounted() {
 			window.onscroll = function () {
 				if (scrollY > 150) {
@@ -58,12 +62,9 @@
 </script>
 
 <style lang="scss">
-	main {
-		h1 {
-			span {
-				opacity: 0.7;
-			}
-		}
+	@import "./assets/_variable.scss";
+	h1 {
+		color: $green;
 	}
 	.email {
 		right: -8rem;
