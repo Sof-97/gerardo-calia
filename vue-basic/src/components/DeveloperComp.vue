@@ -1,0 +1,56 @@
+<template>
+	<div class="flex font-bold items-center text-white text-xl justify-end">
+        <p class="mr-4">A</p>
+		<div class="text-right animation-text">
+			<div class="text-line uppercase">Web</div>
+			<div class="text-line uppercase">Front-end</div>
+			<div class="text-line uppercase">Back-end</div>
+		</div>
+		<p class="ml-3">developer</p>
+	</div>
+</template>
+
+<script>
+	export default {
+		name: "DeveloperComp",
+	};
+</script>
+
+<style lang="scss" scoped>
+	@import "../assets/_variable.scss";
+	.animation-text {
+        overflow: hidden;
+        height: 2rem;
+        .text-line {
+            color: $fucsia;
+			font-size: 1.5rem;
+			line-height: 2rem;
+            &:first-child{
+                animation: animation-role 10s infinite;
+            }
+		}
+	}
+
+	@keyframes animation-role{
+        //WEB
+        0%{
+            margin-top: 0;
+        }
+        //FRONT
+        25%{
+            margin-top: -2rem;
+        }
+        //BACK
+        50%{
+            margin-top: -4rem;
+        }
+        //FRONT
+        75%{
+            margin-top: -2rem;
+        }
+        //WEB
+        100%{
+            margin-top: 0;
+        }
+    }
+</style>

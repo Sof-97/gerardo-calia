@@ -3,8 +3,11 @@
 		<header class="flex justify-end mt-5 mr-5">
 			<nav-bar></nav-bar>
 		</header>
-		<main class="container min-h-full flex justify-center items-center">
-			<h1 class="font-bold text-7xl mt-72 text-emerald-500 ml-8 md:ml-0"><span>Gerardo </span>Calia</h1>
+		<main class="container mx-auto items-center mt-44">
+			<hello-comp></hello-comp>
+			<div class="pl-44">
+				<p class="text-white text-2xl">Ciao sono Gerardo, uno sviluppatore web!</p>
+			</div>
 		</main>
 		<email-comp class="email fixed"></email-comp>
 		<social-comp id="socialY" class="social fixed hidden"></social-comp>
@@ -16,21 +19,21 @@
 	import NavBar from "./components/NavBar.vue";
 	import EmailComp from "./components/EmailComp.vue";
 	import SocialComp from "./components/SocialComp.vue";
+	import HelloComp from "./components/HelloComp.vue";
 
 	export default {
-		components: { NavBar, EmailComp, SocialComp },
+		components: { NavBar, EmailComp, SocialComp, HelloComp },
 		name: "App",
 		data() {
 			return {};
 		},
-		methods: {
-		},
+		methods: {},
 		mounted() {
+			//HORIZONTAL TO VERTICAL SOCIAL DISPLAY
 			window.onscroll = function () {
 				if (scrollY > 150) {
 					const socialX = document.getElementById("socialX");
 					const socialY = document.getElementById("socialY");
-
 					const observerX = new IntersectionObserver(entries => {
 						entries.forEach(entry => {
 							entry.target.classList.toggle("blur-out-contract", entry.isIntersecting);
@@ -58,12 +61,9 @@
 </script>
 
 <style lang="scss">
-	main {
-		h1 {
-			span {
-				opacity: 0.7;
-			}
-		}
+	@import "./assets/_variable.scss";
+	h1 {
+		color: $green;
 	}
 	.email {
 		right: -8rem;
