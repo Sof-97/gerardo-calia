@@ -3,11 +3,10 @@
 		<header class="flex justify-end mt-5 mr-5">
 			<nav-bar></nav-bar>
 		</header>
-		<main class="m-0 min-h-full flex items-center">
-			<div class="flex flex-col mt-40 ml-52">
-				<h2 class="text-3xl text-white font-bold">Hello. I am</h2>
-				<h1 class="font-bold text-7xl md:ml-0"><span>Gerardo </span>Calia</h1>
-				<developer-comp></developer-comp>
+		<main class="container mx-auto items-center mt-44">
+			<hello-comp></hello-comp>
+			<div class="pl-44">
+				<p class="text-white text-2xl">Ciao sono Gerardo, uno sviluppatore web!</p>
 			</div>
 		</main>
 		<email-comp class="email fixed"></email-comp>
@@ -20,21 +19,21 @@
 	import NavBar from "./components/NavBar.vue";
 	import EmailComp from "./components/EmailComp.vue";
 	import SocialComp from "./components/SocialComp.vue";
-	import DeveloperComp from "./components/DeveloperComp.vue";
+	import HelloComp from "./components/HelloComp.vue";
 
 	export default {
-		components: { NavBar, EmailComp, SocialComp, DeveloperComp },
+		components: { NavBar, EmailComp, SocialComp, HelloComp },
 		name: "App",
 		data() {
 			return {};
 		},
 		methods: {},
 		mounted() {
+			//HORIZONTAL TO VERTICAL SOCIAL DISPLAY
 			window.onscroll = function () {
 				if (scrollY > 150) {
 					const socialX = document.getElementById("socialX");
 					const socialY = document.getElementById("socialY");
-
 					const observerX = new IntersectionObserver(entries => {
 						entries.forEach(entry => {
 							entry.target.classList.toggle("blur-out-contract", entry.isIntersecting);
