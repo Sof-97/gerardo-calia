@@ -4,14 +4,14 @@
 			<nav-bar></nav-bar>
 		</header>
 		<main class="container mx-auto items-center mt-44">
-			<hello-comp></hello-comp>
-			<div class="pl-44">
-				<p class="text-white text-2xl">Ciao sono Gerardo, uno sviluppatore web!</p>
+			<hello-comp class="ml-8 mr-8"></hello-comp>
+			<div class="mx-8 mt-2 flex justify-end">
+				<p class="text-white text-right text-2xl w-52">Ciao sono Gerardo, uno sviluppatore web!</p>
 			</div>
 		</main>
-		<email-comp class="email fixed"></email-comp>
+		<email-comp class="email fixed hidden md:flex"></email-comp>
 		<social-comp id="socialY" class="social fixed hidden"></social-comp>
-		<social-comp id="socialX" class="social fixed"></social-comp>
+		<social-comp id="socialX" class="social fixed hidden md:flex"></social-comp>
 	</div>
 </template>
 
