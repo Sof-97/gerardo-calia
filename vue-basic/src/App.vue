@@ -5,8 +5,11 @@
 		</header>
 		<main class="container mx-auto items-center mt-44">
 			<hello-comp class="ml-8 mr-8"></hello-comp>
-			<div class="mx-8 mt-2 flex justify-end">
+			<div class="mx-8 mt-4 flex justify-end">
 				<p class="text-white text-right text-2xl w-52">Ciao sono Gerardo, uno sviluppatore web!</p>
+			</div>
+			<div class="flex justify-center mt-12">
+				<img src="./assets/img/CV.jpg" alt="" class="w-52 rounded-t-lg mix-blend-lighten" />
 			</div>
 		</main>
 		<email-comp class="email fixed hidden md:flex"></email-comp>
