@@ -26,7 +26,7 @@
 			font-size: 1.5rem;
 			line-height: 2rem;
             &:first-child{
-                animation: animation-role 10s infinite;
+                animation: animation-role ease 10s infinite;
             }
 		}
 	}
@@ -36,16 +36,28 @@
         0%{
             margin-top: 0;
         }
+        5%{
+            margin-top: 0;
+        }
         //FRONT
         25%{
+            margin-top: -2rem;
+        }
+        30%{
             margin-top: -2rem;
         }
         //BACK
         50%{
             margin-top: -4rem;
         }
+        55%{
+            margin-top: -4rem;
+        }
         //FRONT
         75%{
+            margin-top: -2rem;
+        }
+        80%{
             margin-top: -2rem;
         }
         //WEB
