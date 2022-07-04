@@ -9,6 +9,26 @@
 				<li class="border-solid border">Resume</li>
 			</ul>
 		</nav>
+
+		<!-- Menu Mobile -->
+		<div class="dropdown dropdown-end md:hidden">
+			<label tabindex="0" class="btn m-1 bg-transparent">Menu</label>
+			<ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-44">
+				<li class="text-white">
+					<a href=""><span>01.</span> About</a>
+				</li>
+				<li class="text-white">
+					<a href=""><span>02.</span> Work</a>
+				</li>
+				<li class="text-white">
+					<a href=""><span>03.</span> Expertise</a>
+				</li>
+				<li class="text-white">
+					<a href=""><span>04.</span> Contact</a>
+				</li>
+				<li class="border-solid border p-2">Resume</li>
+			</ul>
+		</div>
 	</div>
 </template>
 
@@ -19,14 +39,14 @@
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/_variable.scss';
+	@import "../assets/_variable.scss";
 	nav {
 		ul {
 			li {
 				padding: 10px;
 				margin-right: 1rem;
 
-				span{
+				span {
 					color: $green;
 				}
 
@@ -35,6 +55,32 @@
 					border-radius: 10px;
 					color: $green;
 					border-color: $green;
+				}
+			}
+		}
+	}
+	.dropdown {
+		top: 10px;
+		label {
+			border-color: $green;
+			color: $green;
+		}
+		ul {
+			li {
+				display: block;
+				border-radius: 10px;
+				span {
+					color: $green;
+					display: inline-block;
+					width: fit-content;
+				}
+				&:last-child {
+					color: $green;
+					text-align: center;
+					border-color: $green;
+				}
+				&:active{
+					background-color: $fucsia;
 				}
 			}
 		}

@@ -1,19 +1,17 @@
 <template>
 	<div>
-		<header class="flex justify-end mt-5 mr-5">
+		<header class="flex justify-end mt-2 mr-2">
 			<nav-bar></nav-bar>
 		</header>
-		<main class="container mx-auto items-center mt-44">
-			<hello-comp class="ml-8 mr-8"></hello-comp>
+		<main class="container mx-auto items-center  md:mt-44">
+			<hello-comp class="mx-12"></hello-comp>
 			<div class="mx-8 mt-4 flex justify-end">
 				<p class="text-white text-right text-2xl w-52">Ciao sono Gerardo, uno sviluppatore web!</p>
 			</div>
-			<div class="flex justify-center mt-12">
-				<img src="./assets/img/CV.jpg" alt="" class="w-52 rounded-t-lg mix-blend-lighten" />
-			</div>
+			<image-comp></image-comp>
 		</main>
 		<email-comp class="email fixed hidden md:flex"></email-comp>
-		<social-comp id="socialY" class="social fixed hidden"></social-comp>
+		<social-comp id="socialY" class="social fixed hidden "></social-comp>
 		<social-comp id="socialX" class="social fixed hidden md:flex"></social-comp>
 	</div>
 </template>
@@ -23,9 +21,10 @@
 	import EmailComp from "./components/EmailComp.vue";
 	import SocialComp from "./components/SocialComp.vue";
 	import HelloComp from "./components/HelloComp.vue";
+	import ImageComp from "./components/ImageComp.vue"
 
 	export default {
-		components: { NavBar, EmailComp, SocialComp, HelloComp },
+		components: { NavBar, EmailComp, SocialComp, HelloComp, ImageComp },
 		name: "App",
 		data() {
 			return {};
