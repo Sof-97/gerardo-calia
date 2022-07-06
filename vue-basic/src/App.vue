@@ -1,16 +1,12 @@
 <template>
 	<div>
-		<header class="flex justify-end mt-5 mr-5">
+		<header class="flex justify-end mt-2 mr-2">
 			<nav-bar></nav-bar>
 		</header>
-		<main class="container mx-auto items-center mt-44">
-			<hello-comp class="ml-8 mr-8"></hello-comp>
-			<div class="mx-8 mt-4 flex justify-end">
-				<p class="text-white text-right text-2xl w-52">Ciao sono Gerardo, uno sviluppatore web!</p>
-			</div>
-			<div class="flex justify-center mt-12">
-				<img src="./assets/img/CV.jpg" alt="" class="w-52 rounded-t-lg mix-blend-lighten" />
-			</div>
+		<main class="container mx-auto items-centerm mt-8 md:mt-44">
+			<hello-comp class="mx-10"></hello-comp>
+			<intro-comp class="mx-10 mt-4"></intro-comp>
+			<image-comp class="mt-12"></image-comp>
 		</main>
 		<email-comp class="email fixed hidden md:flex"></email-comp>
 		<social-comp id="socialY" class="social fixed hidden"></social-comp>
@@ -23,9 +19,11 @@
 	import EmailComp from "./components/EmailComp.vue";
 	import SocialComp from "./components/SocialComp.vue";
 	import HelloComp from "./components/HelloComp.vue";
+	import ImageComp from "./components/ImageComp.vue";
+	import IntroComp from "./components/IntroComp.vue";
 
 	export default {
-		components: { NavBar, EmailComp, SocialComp, HelloComp },
+		components: { NavBar, EmailComp, SocialComp, HelloComp, ImageComp, IntroComp },
 		name: "App",
 		data() {
 			return {};
@@ -64,6 +62,7 @@
 </script>
 
 <style lang="scss">
+	@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Montserrat:wght@400;900&family=Poppins:wght@700;800&display=swap");
 	@import "./assets/_variable.scss";
 	h1 {
 		color: $green;
