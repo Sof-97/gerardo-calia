@@ -40,6 +40,9 @@
 
 <style lang="scss" scoped>
 	@import "../assets/_variable.scss";
+	li{
+		font-family: 'IBM Plex Mono', monospace;
+	}
 	nav {
 		ul {
 			li {
