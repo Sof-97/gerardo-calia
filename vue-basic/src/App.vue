@@ -26,11 +26,83 @@
 		components: { NavBar, EmailComp, SocialComp, HelloComp, ImageComp, IntroComp },
 		name: "App",
 		data() {
-			return {};
+			return {
+				projects: {
+					dropbox: {
+						name: "Dropbox",
+						description: "",
+						image: "",
+						hostedURL: "https://dropbpox-landingpage.netlify.app",
+						technologies: ["HTML", "CSS"],
+					},
+					discord: {
+						name: "Discord",
+						description: "",
+						image: "",
+						hostedURL: "https://discord-landingpage.netlify.app",
+						technologies: ["HTML", "CSS"],
+					},
+					playstation: {
+						name: "Playstation",
+						description: "",
+						image: "",
+						hostedURL: "https://playstation-landingpage.netlify.app",
+						technologies: ["HTML", "CSS"],
+					},
+					spotify: {
+						name: "Spotify",
+						description: "",
+						image: "",
+						hostedURL: "https://spotifysof.netlify.app",
+						technologies: ["HTML", "CSS"],
+					},
+					netflix: {
+						name: "Netflix",
+						description: "",
+						image: "",
+						hostedURL: "https://boolfix-cataloug.netlify.app",
+						technologies: ["HTML", "CSS", "Scss", "JavaScript", "VueJs"],
+					},
+					wordpress: {
+						name: "Tema Wordpress",
+						description: "",
+						image: "",
+						hostedURL: "https://wordpress-theme-finance.netlify.app",
+						technologies: ["HTML", "CSS", "Scss", "JavaScript", "VueJs"],
+					},
+					whatsapp: {
+						name: "Whatsapp",
+						description: "",
+						image: "",
+						hostedURL: "https://boolzap-sof.netlify.app",
+						technologies: ["HTML", "CSS", "Bootsrap", "JavaScript"],
+					},
+					comics: {
+						name: "Dc Comics",
+						description: "",
+						image: "",
+						hostedURL: "https://dc-comics-landingpage.herokuapp.com",
+						technologies: ["HTML", "CSS", "Php", "Laravel", "Scss"],
+					},
+					airbnb: {
+						name: "Boolbnb",
+						description: "",
+						image: "",
+						hostedURL: "",
+						technologies: ["HTML", "CSS", "Scss", "JavaScript", "VueJs", "Php", "Laravel"],
+					},
+				},
+			};
 		},
 		methods: {},
 		mounted() {
 			//HORIZONTAL TO VERTICAL SOCIAL DISPLAY
+			// A function that is called when the user scrolls. It is checking if the user has scrolled more
+			// than 150px. If so, it is creating two variables, socialX and socialY, which are the two social
+			// components. It is then creating two intersection observers, one for each social component. The
+			// intersection observer is watching the social components and when they are intersecting, it is
+			// adding the class blur-out-contract to socialX and focus-in-expand to socialY. It is also adding
+			// the class hidden to socialX and removing the class hidden from socialY.
 			window.onscroll = function () {
 				if (scrollY > 150) {
 					const socialX = document.getElementById("socialX");
