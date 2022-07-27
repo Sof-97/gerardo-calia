@@ -7,13 +7,17 @@
 			<nav-bar></nav-bar>
 		</header>
 		<main>
-			<section class="w-9/12 mx-auto py-16">
+			<!-- Prima sezione piccola bio e hello Comp -->
+			<section class="w-10/12 pt-40 mx-auto">
 				<HelloComp class="mb-12"></HelloComp>
-				<IntroComp></IntroComp>
-				<ButtonComp text="I mie progetti" class="my-4 green size-small" ></ButtonComp>
+				<IntroComp class="mb-8"></IntroComp>
+				<ButtonComp text="I mie progetti" class="my-4 green"></ButtonComp>
 			</section>
+			<!-- Seconda sezione immagine + Bio grande e tecnologie -->
 			<section>
 				<ImageComp></ImageComp>
+				<LongBioComp></LongBioComp>
+				<TechComp class="mt-8"></TechComp>
 			</section>
 		</main>
 		<email-comp class="email fixed hidden md:flex"></email-comp>
@@ -30,9 +34,11 @@
 	import ImageComp from "./components/ImageComp.vue";
 	import IntroComp from "./components/IntroComp.vue";
 	import ButtonComp from "./components/ButtonComp.vue";
+	import LongBioComp from "./components/LongBioComp.vue";
+import TechComp from "./components/TechComp.vue";
 
 	export default {
-		components: { NavBar, EmailComp, SocialComp, HelloComp, ImageComp, IntroComp, ButtonComp },
+		components: { NavBar, EmailComp, SocialComp, HelloComp, ImageComp, IntroComp, ButtonComp, LongBioComp, TechComp },
 		name: "App",
 		data() {
 			return {
@@ -145,8 +151,13 @@
 <style lang="scss">
 	@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Montserrat:wght@400;900&family=Poppins:wght@700;800&display=swap");
 	@import "./assets/_variable.scss";
-	h1 {
-		color: $green;
+	header {
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+	section {
+		height: 100vh;
 	}
 	.email {
 		right: -8rem;

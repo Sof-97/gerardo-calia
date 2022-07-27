@@ -21,11 +21,12 @@
 		padding: 0.5rem;
 		border: 1px solid $green;
 		border-radius: 5px;
+		&:active {
+			background-color: $green;
+			color: #fff;
+		}
 	}
-	.green{
+	.green {
 		color: $green;
-	}
-	.size-small{
-		font-size: 0.9rem;
 	}
 </style>
