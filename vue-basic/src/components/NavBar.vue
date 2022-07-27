@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<nav class="md:block hidden">
+		<nav class="md:block hidden p-4">
 			<ul class="flex justify-end">
 				<li class="text-white"><span>01.</span> About</li>
 				<li class="text-white"><span>02.</span> Work</li>
@@ -12,7 +12,7 @@
 
 		<!-- Menu Mobile -->
 		<div class="dropdown dropdown-end md:hidden">
-			<label tabindex="0" class="btn m-1 bg-transparent">Menu</label>
+			<label tabindex="0" class="btn m-4 bg-transparent">Menu</label>
 			<ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-44">
 				<li class="text-white">
 					<a href=""><span>01.</span> About</a>
@@ -26,49 +26,45 @@
 				<li class="text-white">
 					<a href=""><span>04.</span> Contact</a>
 				</li>
-				<li class="border-solid border p-2">Resume</li>
+				<li>
+					<ButtonComp text="Resume" link="#"></ButtonComp>
+				</li>
 			</ul>
 		</div>
 	</div>
 </template>
 
 <script>
+	import ButtonComp from "./ButtonComp.vue";
 	export default {
 		name: "NavBar",
+		components: { ButtonComp },
 	};
 </script>
 
 <style lang="scss" scoped>
 	@import "../assets/_variable.scss";
-	li{
-		font-family: 'IBM Plex Mono', monospace;
+	* {
+		font-family: "IBM Plex Mono", monospace;
 	}
 	nav {
 		ul {
 			li {
 				padding: 10px;
 				margin-right: 1rem;
-
 				span {
 					color: $green;
-				}
-
-				&:last-of-type {
-					padding: 10px;
-					border-radius: 10px;
-					color: $green;
-					border-color: $green;
 				}
 			}
 		}
 	}
 	.dropdown {
-		top: 10px;
 		label {
 			border-color: $green;
 			color: $green;
 		}
 		ul {
+			margin-right: 1rem;
 			li {
 				display: block;
 				border-radius: 10px;
@@ -78,12 +74,10 @@
 					width: fit-content;
 				}
 				&:last-child {
-					color: $green;
+					display: flex;
+					justify-content: center;
 					text-align: center;
-					border-color: $green;
-				}
-				&:active{
-					background-color: $fucsia;
+					color: $green;
 				}
 			}
 		}

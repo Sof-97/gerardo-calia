@@ -1,12 +1,20 @@
 <template>
 	<div>
-		<header class="flex justify-end mt-2 mr-2">
+		<header class="flex justify-between content-center">
+			<a href="https://www.gerardocalia.it" class="self-center px-8">
+				<img src="./assets/img/D20.svg" alt="little image of a d20" style="height: 50px" />
+			</a>
 			<nav-bar></nav-bar>
 		</header>
-		<main class="container mx-auto items-centerm mt-8 md:mt-44">
-			<hello-comp class="mx-10"></hello-comp>
-			<intro-comp class="mx-10 mt-4"></intro-comp>
-			<image-comp class="mt-12"></image-comp>
+		<main>
+			<section class="w-9/12 mx-auto py-16">
+				<HelloComp class="mb-12"></HelloComp>
+				<IntroComp></IntroComp>
+				<ButtonComp text="I mie progetti" class="my-4 green size-small" ></ButtonComp>
+			</section>
+			<section>
+				<ImageComp></ImageComp>
+			</section>
 		</main>
 		<email-comp class="email fixed hidden md:flex"></email-comp>
 		<social-comp id="socialY" class="social fixed hidden"></social-comp>
@@ -21,9 +29,10 @@
 	import HelloComp from "./components/HelloComp.vue";
 	import ImageComp from "./components/ImageComp.vue";
 	import IntroComp from "./components/IntroComp.vue";
+	import ButtonComp from "./components/ButtonComp.vue";
 
 	export default {
-		components: { NavBar, EmailComp, SocialComp, HelloComp, ImageComp, IntroComp },
+		components: { NavBar, EmailComp, SocialComp, HelloComp, ImageComp, IntroComp, ButtonComp },
 		name: "App",
 		data() {
 			return {
@@ -75,7 +84,7 @@
 						description: "",
 						image: "",
 						hostedURL: "https://boolzap-sof.netlify.app",
-						technologies: ["HTML", "CSS", "Bootsrap", "JavaScript"],
+						technologies: ["HTML", "CSS", "Bootstrap", "JavaScript"],
 					},
 					comics: {
 						name: "Dc Comics",
@@ -113,17 +122,17 @@
 							setTimeout(() => {
 								entry.target.classList.add("hidden", entry.isIntersecting);
 							}, 2000);
-						}),
-							console.log(entries);
+						});
 					});
 					const observerY = new IntersectionObserver(entries => {
-						entries.forEach(entry => {
-							setTimeout(() => {
-								entry.target.classList.remove("hidden", entry.isIntersecting);
-								entry.target.classList.add("focus-in-expand", entry.isIntersecting);
-							}, 1000);
-						}),
-							console.log(entries);
+						if (window.innerWidth > 600) {
+							entries.forEach(entry => {
+								setTimeout(() => {
+									entry.target.classList.remove("hidden", entry.isIntersecting);
+									entry.target.classList.add("focus-in-expand", entry.isIntersecting);
+								}, 1000);
+							});
+						}
 					});
 					observerY.observe(socialY);
 					observerX.observe(socialX);
@@ -148,7 +157,7 @@
 		transform: translate(0, 0);
 		transform: rotate(90deg);
 		left: 200px;
-		bottom: -25vh;
+		bottom: -20vh;
 		svg {
 			transform: rotate(-90deg);
 		}
