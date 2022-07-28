@@ -1,5 +1,5 @@
 <template>
-	<div class="mx-auto w-10/12">
+	<div class="mx-auto w-9/12">
 		<h2 class="font-bold text-white text-lg">Alcune delle tecnologie che ho usato recentemente:</h2>
 		<div class=" mx-auto mt-4">
 			<ul class="flex flex-wrap flex-col">

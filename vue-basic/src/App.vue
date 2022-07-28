@@ -16,8 +16,18 @@
 			<!-- Seconda sezione immagine + Bio grande e tecnologie -->
 			<section>
 				<ImageComp></ImageComp>
-				<LongBioComp></LongBioComp>
+				<LongBioComp class="my-2"></LongBioComp>
 				<TechComp class="mt-8"></TechComp>
+			</section>
+			<!-- Esperienze lavorative -->
+			<section class="min-h-fit">
+				<h2>Esperienze lavorative</h2>
+			</section>
+			<!-- Cards Progetti -->
+			<section>
+				<div class="flex flex-wrap">
+					<ProjCardComp :key="i" v-for="(proj, i) in projects" :data="proj"></ProjCardComp>
+				</div>
 			</section>
 		</main>
 		<email-comp class="email fixed hidden md:flex"></email-comp>
@@ -35,10 +45,22 @@
 	import IntroComp from "./components/IntroComp.vue";
 	import ButtonComp from "./components/ButtonComp.vue";
 	import LongBioComp from "./components/LongBioComp.vue";
-import TechComp from "./components/TechComp.vue";
+	import TechComp from "./components/TechComp.vue";
+	import ProjCardComp from "./components/ProjCardComp.vue";
 
 	export default {
-		components: { NavBar, EmailComp, SocialComp, HelloComp, ImageComp, IntroComp, ButtonComp, LongBioComp, TechComp },
+		components: {
+			NavBar,
+			EmailComp,
+			SocialComp,
+			HelloComp,
+			ImageComp,
+			IntroComp,
+			ButtonComp,
+			LongBioComp,
+			TechComp,
+			ProjCardComp,
+		},
 		name: "App",
 		data() {
 			return {
@@ -46,64 +68,65 @@ import TechComp from "./components/TechComp.vue";
 					dropbox: {
 						name: "Dropbox",
 						description: "",
-						image: "",
+						image: "dropbox.png",
 						hostedURL: "https://dropbpox-landingpage.netlify.app",
+						github: "https://github.com/Sof-97/htmlcss-dropbox",
 						technologies: ["HTML", "CSS"],
 					},
 					discord: {
 						name: "Discord",
 						description: "",
-						image: "",
+						image: "discord.png",
 						hostedURL: "https://discord-landingpage.netlify.app",
+						github: "https://github.com/Sof-97/htmlcss-discord",
 						technologies: ["HTML", "CSS"],
 					},
 					playstation: {
 						name: "Playstation",
 						description: "",
-						image: "",
+						image: "playstation.png",
 						hostedURL: "https://playstation-landingpage.netlify.app",
+						github: "https://github.com/Sof-97/htmlcss-playstation",
 						technologies: ["HTML", "CSS"],
 					},
 					spotify: {
 						name: "Spotify",
 						description: "",
-						image: "",
+						image: "spotify.png",
 						hostedURL: "https://spotifysof.netlify.app",
+						github: "https://github.com/Sof-97/spotifyweb-replica",
 						technologies: ["HTML", "CSS"],
 					},
 					netflix: {
 						name: "Netflix",
-						description: "",
-						image: "",
+						description: "https://github.com/Sof-97/vue-boolflix",
+						image: "netflix.png",
 						hostedURL: "https://boolfix-cataloug.netlify.app",
+						github: "",
 						technologies: ["HTML", "CSS", "Scss", "JavaScript", "VueJs"],
 					},
 					wordpress: {
 						name: "Tema Wordpress",
 						description: "",
-						image: "",
+						image: "wordpress_theme.png",
 						hostedURL: "https://wordpress-theme-finance.netlify.app",
+						github: "https://github.com/Sof-97/wordpress-theme",
 						technologies: ["HTML", "CSS", "Scss", "JavaScript", "VueJs"],
 					},
 					whatsapp: {
 						name: "Whatsapp",
 						description: "",
-						image: "",
+						image: "boolzap.png",
 						hostedURL: "https://boolzap-sof.netlify.app",
+						github: "https://github.com/Sof-97/vue-boolzapp",
 						technologies: ["HTML", "CSS", "Bootstrap", "JavaScript"],
-					},
-					comics: {
-						name: "Dc Comics",
-						description: "",
-						image: "",
-						hostedURL: "https://dc-comics-landingpage.herokuapp.com",
-						technologies: ["HTML", "CSS", "Php", "Laravel", "Scss"],
 					},
 					airbnb: {
 						name: "Boolbnb",
 						description: "",
-						image: "",
+						image: "airbnb.jpg",
 						hostedURL: "",
+						github: "https://github.com/Sof-97/boolbnb",
 						technologies: ["HTML", "CSS", "Scss", "JavaScript", "VueJs", "Php", "Laravel"],
 					},
 				},
@@ -157,7 +180,7 @@ import TechComp from "./components/TechComp.vue";
 		width: 100%;
 	}
 	section {
-		height: 100vh;
+		min-height: 100vh;
 	}
 	.email {
 		right: -8rem;
