@@ -8,7 +8,6 @@
 			<intro-comp class="mx-10 mt-4"></intro-comp>
 			<image-comp class="mt-12"></image-comp>
 		</main>
-		<h2>Sito in aggiornamento.</h2>
 		<email-comp class="email fixed hidden md:flex"></email-comp>
 		<social-comp id="socialY" class="social fixed hidden"></social-comp>
 		<social-comp id="socialX" class="social fixed hidden md:flex"></social-comp>
