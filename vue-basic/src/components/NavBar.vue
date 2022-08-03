@@ -1,18 +1,20 @@
 <template>
 	<div>
-		<nav class="md:block hidden">
-			<ul class="flex justify-end">
+		<nav class="md:block hidden p-4">
+			<ul class="flex justify-end items-center">
 				<li class="text-white"><span>01.</span> About</li>
 				<li class="text-white"><span>02.</span> Work</li>
 				<li class="text-white"><span>03.</span> Expertise</li>
 				<li class="text-white"><span>04.</span> Contact</li>
-				<li class="border-solid border">Resume</li>
+				<li>
+					<ButtonComp text="Resume" link="#"></ButtonComp>
+				</li>
 			</ul>
 		</nav>
 
 		<!-- Menu Mobile -->
 		<div class="dropdown dropdown-end md:hidden">
-			<label tabindex="0" class="btn m-1 bg-transparent">Menu</label>
+			<label tabindex="0" class="btn m-4 bg-transparent">Menu</label>
 			<ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-44">
 				<li class="text-white">
 					<a href=""><span>01.</span> About</a>
@@ -26,66 +28,68 @@
 				<li class="text-white">
 					<a href=""><span>04.</span> Contact</a>
 				</li>
-				<li class="border-solid border p-2">Resume</li>
+				<li>
+					<ButtonComp text="Resume" link="#"></ButtonComp>
+				</li>
 			</ul>
 		</div>
 	</div>
 </template>
 
 <script>
-	export default {
-		name: "NavBar",
-	};
+import ButtonComp from "./ButtonComp.vue";
+export default {
+	name: "NavBar",
+	components: { ButtonComp },
+};
 </script>
 
 <style lang="scss" scoped>
-	@import "../assets/_variable.scss";
-	li{
-		font-family: 'IBM Plex Mono', monospace;
-	}
-	nav {
-		ul {
-			li {
-				padding: 10px;
-				margin-right: 1rem;
+@import "../assets/_variable.scss";
 
-				span {
-					color: $green;
-				}
+* {
+	font-family: "IBM Plex Mono", monospace;
+}
 
-				&:last-of-type {
-					padding: 10px;
-					border-radius: 10px;
-					color: $green;
-					border-color: $green;
-				}
+nav {
+	ul {
+		li {
+			padding: 10px;
+			margin-right: 1rem;
+
+			span {
+				color: $green;
 			}
 		}
 	}
-	.dropdown {
-		top: 10px;
-		label {
-			border-color: $green;
-			color: $green;
-		}
-		ul {
-			li {
-				display: block;
-				border-radius: 10px;
-				span {
-					color: $green;
-					display: inline-block;
-					width: fit-content;
-				}
-				&:last-child {
-					color: $green;
-					text-align: center;
-					border-color: $green;
-				}
-				&:active{
-					background-color: $fucsia;
-				}
+}
+
+.dropdown {
+	label {
+		border-color: $green;
+		color: $green;
+	}
+
+	ul {
+		margin-right: 1rem;
+
+		li {
+			display: block;
+			border-radius: 10px;
+
+			span {
+				color: $green;
+				display: inline-block;
+				width: fit-content;
+			}
+
+			&:last-child {
+				display: flex;
+				justify-content: center;
+				text-align: center;
+				color: $green;
 			}
 		}
 	}
+}
 </style>

@@ -1,6 +1,6 @@
 <template>
 	<div class="flex font-bold items-center text-white text-xl justify-end">
-        <p class="mr-4">a</p>
+        <p class="mr-4 hidden">a</p>
 		<div class="text-right animation-text">
 			<div class="text-line uppercase">Web</div>
 			<div class="text-line uppercase">Front-end</div>

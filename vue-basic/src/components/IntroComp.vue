@@ -1,16 +1,17 @@
 <template>
-	<div class="flex justify-end">
-		<p class="text-white text-right text-2xl w-64">Ciao sono Gerardo, uno sviluppatore web!</p>
-	</div>
+	<p class="text-slate-400 text-lg text-right">Hi, I'm Gerardo Calia and I'm a front-end and back-end web
+		developer. I'm on the
+		lookout for my next
+		challenge in building great sites, applications that engage users and make the web a better place.</p>
 </template>
 <script>
 export default {
-    name: "IntroComp"
-}
+	name: "IntroComp",
+};
 </script>
 
 <style lang="scss" scoped>
-p{
-    font-family: 'Montserrat';
+* {
+	font-family: "Montserrat";
 }
 </style>
