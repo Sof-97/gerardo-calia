@@ -8,22 +8,24 @@
 	</div>
 </template>
 <script>
-	import DeveloperComp from "./DeveloperComp.vue";
-	export default {
-		name: "HelloComp",
-		components: {
-			DeveloperComp,
-		},
-	};
+import DeveloperComp from "./DeveloperComp.vue";
+export default {
+	name: "HelloComp",
+	components: {
+		DeveloperComp,
+	},
+};
 </script>
 <style lang="scss" scoped>
-	@import "../assets/variable";
-	h2 {
-		font-family: "IBM Plex Mono", monospace;
-	}
-	h1 {
-		font-family: "Poppins", sans-serif;
-		font-weight: 800;
-		color: $green;
-	}
+@import "../assets/variable";
+
+h2 {
+	font-family: "IBM Plex Mono", monospace;
+}
+
+h1 {
+	font-family: "Poppins", sans-serif;
+	font-weight: 800;
+	color: $green;
+}
 </style>

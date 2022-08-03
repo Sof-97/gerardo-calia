@@ -8,10 +8,10 @@
 		</header>
 		<main>
 			<!-- Prima sezione piccola bio e hello Comp -->
-			<section class="w-10/12 pt-40 mx-auto">
+			<section class="flex flex-col w-10/12 pt-20 pb-32 mx-auto">
 				<HelloComp class="mb-12"></HelloComp>
 				<IntroComp class="mb-8"></IntroComp>
-				<ButtonComp text="I mie progetti" class="my-4 green"></ButtonComp>
+				<ButtonComp text="Projects" link="#projects" class="my-1 green max-w-fit self-end"></ButtonComp>
 			</section>
 			<!-- Seconda sezione immagine + Bio grande e tecnologie -->
 			<section>
@@ -37,232 +37,250 @@
 </template>
 
 <script>
-	import NavBar from "./components/NavBar.vue";
-	import EmailComp from "./components/EmailComp.vue";
-	import SocialComp from "./components/SocialComp.vue";
-	import HelloComp from "./components/HelloComp.vue";
-	import ImageComp from "./components/ImageComp.vue";
-	import IntroComp from "./components/IntroComp.vue";
-	import ButtonComp from "./components/ButtonComp.vue";
-	import LongBioComp from "./components/LongBioComp.vue";
-	import TechComp from "./components/TechComp.vue";
-	import ProjCardComp from "./components/ProjCardComp.vue";
+import NavBar from "./components/NavBar.vue";
+import EmailComp from "./components/EmailComp.vue";
+import SocialComp from "./components/SocialComp.vue";
+import HelloComp from "./components/HelloComp.vue";
+import ImageComp from "./components/ImageComp.vue";
+import IntroComp from "./components/IntroComp.vue";
+import ButtonComp from "./components/ButtonComp.vue";
+import LongBioComp from "./components/LongBioComp.vue";
+import TechComp from "./components/TechComp.vue";
+import ProjCardComp from "./components/ProjCardComp.vue";
 
-	export default {
-		components: {
-			NavBar,
-			EmailComp,
-			SocialComp,
-			HelloComp,
-			ImageComp,
-			IntroComp,
-			ButtonComp,
-			LongBioComp,
-			TechComp,
-			ProjCardComp,
-		},
-		name: "App",
-		data() {
-			return {
-				projects: {
-					dropbox: {
-						name: "Dropbox",
-						description: "",
-						image: "dropbox.png",
-						hostedURL: "https://dropbpox-landingpage.netlify.app",
-						github: "https://github.com/Sof-97/htmlcss-dropbox",
-						technologies: ["HTML", "CSS"],
-					},
-					discord: {
-						name: "Discord",
-						description: "",
-						image: "discord.png",
-						hostedURL: "https://discord-landingpage.netlify.app",
-						github: "https://github.com/Sof-97/htmlcss-discord",
-						technologies: ["HTML", "CSS"],
-					},
-					playstation: {
-						name: "Playstation",
-						description: "",
-						image: "playstation.png",
-						hostedURL: "https://playstation-landingpage.netlify.app",
-						github: "https://github.com/Sof-97/htmlcss-playstation",
-						technologies: ["HTML", "CSS"],
-					},
-					spotify: {
-						name: "Spotify",
-						description: "",
-						image: "spotify.png",
-						hostedURL: "https://spotifysof.netlify.app",
-						github: "https://github.com/Sof-97/spotifyweb-replica",
-						technologies: ["HTML", "CSS"],
-					},
-					netflix: {
-						name: "Netflix",
-						description: "https://github.com/Sof-97/vue-boolflix",
-						image: "netflix.png",
-						hostedURL: "https://boolfix-cataloug.netlify.app",
-						github: "",
-						technologies: ["HTML", "CSS", "Scss", "JavaScript", "VueJs"],
-					},
-					wordpress: {
-						name: "Tema Wordpress",
-						description: "",
-						image: "wordpress_theme.png",
-						hostedURL: "https://wordpress-theme-finance.netlify.app",
-						github: "https://github.com/Sof-97/wordpress-theme",
-						technologies: ["HTML", "CSS", "Scss", "JavaScript", "VueJs"],
-					},
-					whatsapp: {
-						name: "Whatsapp",
-						description: "",
-						image: "boolzap.png",
-						hostedURL: "https://boolzap-sof.netlify.app",
-						github: "https://github.com/Sof-97/vue-boolzapp",
-						technologies: ["HTML", "CSS", "Bootstrap", "JavaScript"],
-					},
-					airbnb: {
-						name: "Boolbnb",
-						description: "",
-						image: "airbnb.jpg",
-						hostedURL: "",
-						github: "https://github.com/Sof-97/boolbnb",
-						technologies: ["HTML", "CSS", "Scss", "JavaScript", "VueJs", "Php", "Laravel"],
-					},
+export default {
+	components: {
+		NavBar,
+		EmailComp,
+		SocialComp,
+		HelloComp,
+		ImageComp,
+		IntroComp,
+		ButtonComp,
+		LongBioComp,
+		TechComp,
+		ProjCardComp,
+	},
+	name: "App",
+	data() {
+		return {
+			projects: {
+				dropbox: {
+					name: "Dropbox",
+					description: "",
+					image: "dropbox.png",
+					hostedURL: "https://dropbpox-landingpage.netlify.app",
+					github: "https://github.com/Sof-97/htmlcss-dropbox",
+					technologies: ["HTML", "CSS"],
 				},
-			};
-		},
-		methods: {},
-		mounted() {
-			//HORIZONTAL TO VERTICAL SOCIAL DISPLAY
-			// A function that is called when the user scrolls. It is checking if the user has scrolled more
-			// than 150px. If so, it is creating two variables, socialX and socialY, which are the two social
-			// components. It is then creating two intersection observers, one for each social component. The
-			// intersection observer is watching the social components and when they are intersecting, it is
-			// adding the class blur-out-contract to socialX and focus-in-expand to socialY. It is also adding
-			// the class hidden to socialX and removing the class hidden from socialY.
-			window.onscroll = function () {
-				if (scrollY > 150) {
-					const socialX = document.getElementById("socialX");
-					const socialY = document.getElementById("socialY");
-					const observerX = new IntersectionObserver(entries => {
+				discord: {
+					name: "Discord",
+					description: "",
+					image: "discord.png",
+					hostedURL: "https://discord-landingpage.netlify.app",
+					github: "https://github.com/Sof-97/htmlcss-discord",
+					technologies: ["HTML", "CSS"],
+				},
+				playstation: {
+					name: "Playstation",
+					description: "",
+					image: "playstation.png",
+					hostedURL: "https://playstation-landingpage.netlify.app",
+					github: "https://github.com/Sof-97/htmlcss-playstation",
+					technologies: ["HTML", "CSS"],
+				},
+				spotify: {
+					name: "Spotify",
+					description: "",
+					image: "spotify.png",
+					hostedURL: "https://spotifysof.netlify.app",
+					github: "https://github.com/Sof-97/spotifyweb-replica",
+					technologies: ["HTML", "CSS"],
+				},
+				netflix: {
+					name: "Netflix",
+					description: "https://github.com/Sof-97/vue-boolflix",
+					image: "netflix.png",
+					hostedURL: "https://boolfix-cataloug.netlify.app",
+					github: "",
+					technologies: ["HTML", "CSS", "Scss", "JavaScript", "VueJs"],
+				},
+				wordpress: {
+					name: "Tema Wordpress",
+					description: "",
+					image: "wordpress_theme.png",
+					hostedURL: "https://wordpress-theme-finance.netlify.app",
+					github: "https://github.com/Sof-97/wordpress-theme",
+					technologies: ["HTML", "CSS", "Scss", "JavaScript", "VueJs"],
+				},
+				whatsapp: {
+					name: "Whatsapp",
+					description: "",
+					image: "boolzap.png",
+					hostedURL: "https://boolzap-sof.netlify.app",
+					github: "https://github.com/Sof-97/vue-boolzapp",
+					technologies: ["HTML", "CSS", "Bootstrap", "JavaScript"],
+				},
+				airbnb: {
+					name: "Boolbnb",
+					description: "",
+					image: "airbnb.jpg",
+					hostedURL: "",
+					github: "https://github.com/Sof-97/boolbnb",
+					technologies: ["HTML", "CSS", "Scss", "JavaScript", "VueJs", "Php", "Laravel"],
+				},
+			},
+		};
+	},
+	methods: {},
+	mounted() {
+		//HORIZONTAL TO VERTICAL SOCIAL DISPLAY
+		// A function that is called when the user scrolls. It is checking if the user has scrolled more
+		// than 150px. If so, it is creating two variables, socialX and socialY, which are the two social
+		// components. It is then creating two intersection observers, one for each social component. The
+		// intersection observer is watching the social components and when they are intersecting, it is
+		// adding the class blur-out-contract to socialX and focus-in-expand to socialY. It is also adding
+		// the class hidden to socialX and removing the class hidden from socialY.
+		window.onscroll = function () {
+			if (scrollY > 150) {
+				const socialX = document.getElementById("socialX");
+				const socialY = document.getElementById("socialY");
+				const observerX = new IntersectionObserver(entries => {
+					entries.forEach(entry => {
+						entry.target.classList.toggle("blur-out-contract", entry.isIntersecting);
+						setTimeout(() => {
+							entry.target.classList.add("hidden", entry.isIntersecting);
+						}, 2000);
+					});
+				});
+				const observerY = new IntersectionObserver(entries => {
+					if (window.innerWidth > 600) {
 						entries.forEach(entry => {
-							entry.target.classList.toggle("blur-out-contract", entry.isIntersecting);
 							setTimeout(() => {
-								entry.target.classList.add("hidden", entry.isIntersecting);
-							}, 2000);
+								entry.target.classList.remove("hidden", entry.isIntersecting);
+								entry.target.classList.add("focus-in-expand", entry.isIntersecting);
+							}, 1000);
 						});
-					});
-					const observerY = new IntersectionObserver(entries => {
-						if (window.innerWidth > 600) {
-							entries.forEach(entry => {
-								setTimeout(() => {
-									entry.target.classList.remove("hidden", entry.isIntersecting);
-									entry.target.classList.add("focus-in-expand", entry.isIntersecting);
-								}, 1000);
-							});
-						}
-					});
-					observerY.observe(socialY);
-					observerX.observe(socialX);
-				}
-			};
-		},
-	};
+					}
+				});
+				observerY.observe(socialY);
+				observerX.observe(socialX);
+			}
+		};
+	},
+};
 </script>
 
 <style lang="scss">
-	@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Montserrat:wght@400;900&family=Poppins:wght@700;800&display=swap");
-	@import "./assets/_variable.scss";
-	header {
-		position: absolute;
-		top: 0;
-		width: 100%;
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Montserrat:wght@400;900&family=Poppins:wght@700;800&display=swap");
+@import "./assets/_variable.scss";
+
+header {
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+section {
+	min-height: 100vh;
+
+	@media screen and (max-width:1024px) {
+		min-height: auto;
 	}
-	section {
-		min-height: 100vh;
+}
+
+.email {
+	right: -8rem;
+	bottom: 180px;
+	transform: rotate(90deg);
+}
+
+#socialX {
+	transform: translate(0, 0);
+	transform: rotate(90deg);
+	left: 200px;
+	bottom: -20vh;
+
+	svg {
+		transform: rotate(-90deg);
 	}
-	.email {
-		right: -8rem;
-		bottom: 180px;
-		transform: rotate(90deg);
+}
+
+#socialY {
+	transform: translate(1.5rem, 0);
+}
+
+//ANIMATION BLUR HORIZONTAL
+.blur-out-contract {
+	-webkit-animation: blur-out-contract 0.9s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+	animation: blur-out-contract 0.9s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+@-webkit-keyframes blur-out-contract {
+	0% {
+		-webkit-filter: blur(0.01);
+		filter: blur(0.01);
 	}
-	#socialX {
-		transform: translate(0, 0);
-		transform: rotate(90deg);
-		left: 200px;
-		bottom: -20vh;
-		svg {
-			transform: rotate(-90deg);
-		}
+
+	100% {
+		letter-spacing: -0.5em;
+		-webkit-filter: blur(12px) opacity(0%);
+		filter: blur(12px) opacity(0%);
 	}
-	#socialY {
+}
+
+@keyframes blur-out-contract {
+	0% {
+		transform: translate(0, 0px) rotate(90deg);
+		-webkit-filter: blur(0.01);
+		filter: blur(0.01);
+	}
+
+	100% {
+		transform: translate(0, 200px) rotate(0deg);
+		letter-spacing: -0.5em;
+		-webkit-filter: blur(12px) opacity(0%);
+		filter: blur(12px) opacity(0%);
+	}
+}
+
+//ANIMATION BLUR VERTICAL
+.focus-in-expand {
+	-webkit-animation: focus-in-expand 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+	animation: focus-in-expand 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes focus-in-expand {
+	0% {
+		transform: translate(-1.5rem, 0);
+		letter-spacing: -0.5em;
+		-webkit-filter: blur(12px);
+		filter: blur(12px);
+		opacity: 0;
+	}
+
+	100% {
 		transform: translate(1.5rem, 0);
+		-webkit-filter: blur(0px);
+		filter: blur(0px);
+		opacity: 1;
+	}
+}
+
+@keyframes focus-in-expand {
+	0% {
+		transform: translate(-1.5rem, 0);
+		letter-spacing: -0.5em;
+		-webkit-filter: blur(12px);
+		filter: blur(12px);
+		opacity: 0;
 	}
 
-	//ANIMATION BLUR HORIZONTAL
-	.blur-out-contract {
-		-webkit-animation: blur-out-contract 0.9s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-		animation: blur-out-contract 0.9s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+	100% {
+		transform: translate(1.5rem, 0);
+		-webkit-filter: blur(0px);
+		filter: blur(0px);
+		opacity: 1;
 	}
-	@-webkit-keyframes blur-out-contract {
-		0% {
-			-webkit-filter: blur(0.01);
-			filter: blur(0.01);
-		}
-		100% {
-			letter-spacing: -0.5em;
-			-webkit-filter: blur(12px) opacity(0%);
-			filter: blur(12px) opacity(0%);
-		}
-	}
-	@keyframes blur-out-contract {
-		0% {
-			transform: translate(0, 0px) rotate(90deg);
-			-webkit-filter: blur(0.01);
-			filter: blur(0.01);
-		}
-		100% {
-			transform: translate(0, 200px) rotate(0deg);
-			letter-spacing: -0.5em;
-			-webkit-filter: blur(12px) opacity(0%);
-			filter: blur(12px) opacity(0%);
-		}
-	}
-
-	//ANIMATION BLUR VERTICAL
-	.focus-in-expand {
-		-webkit-animation: focus-in-expand 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-		animation: focus-in-expand 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-	}
-	@-webkit-keyframes focus-in-expand {
-		0% {
-			transform: translate(-1.5rem, 0);
-			letter-spacing: -0.5em;
-			-webkit-filter: blur(12px);
-			filter: blur(12px);
-			opacity: 0;
-		}
-		100% {
-			transform: translate(1.5rem, 0);
-			-webkit-filter: blur(0px);
-			filter: blur(0px);
-			opacity: 1;
-		}
-	}
-	@keyframes focus-in-expand {
-		0% {
-			transform: translate(-1.5rem, 0);
-			letter-spacing: -0.5em;
-			-webkit-filter: blur(12px);
-			filter: blur(12px);
-			opacity: 0;
-		}
-		100% {
-			transform: translate(1.5rem, 0);
-			-webkit-filter: blur(0px);
-			filter: blur(0px);
-			opacity: 1;
-		}
-	}
+}
 </style>
