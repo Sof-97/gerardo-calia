@@ -79,7 +79,7 @@ export default {
 			projects: {
 				dropbox: {
 					name: "Dropbox",
-					description: "Breve descrizione del progetto",
+					description: "The Dropobox landing page built with only HTML & CSS.",
 					image: "dropbox.png",
 					hostedURL: "https://dropbpox-landingpage.netlify.app",
 					github: "https://github.com/Sof-97/htmlcss-dropbox",
@@ -87,7 +87,7 @@ export default {
 				},
 				discord: {
 					name: "Discord",
-					description: "Breve descrizione del progetto",
+					description: "The Discord landing page built with only HTML & CSS.",
 					image: "discord.png",
 					hostedURL: "https://discord-landingpage.netlify.app",
 					github: "https://github.com/Sof-97/htmlcss-discord",
@@ -95,7 +95,7 @@ export default {
 				},
 				playstation: {
 					name: "Playstation",
-					description: "Breve descrizione del progetto",
+					description: "The PlayStation landing page built with HTML & CSS. The page is completely responsive and mobile ready.",
 					image: "playstation.png",
 					hostedURL: "https://playstation-landingpage.netlify.app",
 					github: "https://github.com/Sof-97/htmlcss-playstation",
@@ -103,15 +103,15 @@ export default {
 				},
 				spotify: {
 					name: "Spotify",
-					description: "Breve descrizione del progetto",
+					description: "The homepage of the Spotify Web App, responsive and mobile ready.",
 					image: "spotify.png",
 					hostedURL: "https://spotifysof.netlify.app",
 					github: "https://github.com/Sof-97/spotifyweb-replica",
 					technologies: ["HTML", "CSS"],
 				},
 				netflix: {
-					name: "Netflix",
-					description: "Breve descrizione del progetto",
+					name: "Netflix Catalogue",
+					description: "A dynamic page where explore and search for movies and tv series. Built with Vue.js and the help of Axios.",
 					image: "netflix.png",
 					hostedURL: "https://boolfix-cataloug.netlify.app",
 					github: "https://github.com/Sof-97/vue-boolflix",
@@ -119,7 +119,7 @@ export default {
 				},
 				wordpress: {
 					name: "Tema Wordpress",
-					description: "Breve descrizione del progetto",
+					description: "A completely modular custom WordPress theme, built with custom Scss and Vue.Js. All the components are reusable and dynamic",
 					image: "wordpress_theme.png",
 					hostedURL: "https://wordpress-theme-finance.netlify.app",
 					github: "https://github.com/Sof-97/wordpress-theme",
@@ -127,7 +127,7 @@ export default {
 				},
 				whatsapp: {
 					name: "Whatsapp",
-					description: "Breve descrizione del progetto",
+					description: "A clone of the Whatsapp Web App where you can send messages to your contacts and automatic timed replies.",
 					image: "boolzap.png",
 					hostedURL: "https://boolzap-sof.netlify.app",
 					github: "https://github.com/Sof-97/vue-boolzapp",
@@ -135,7 +135,7 @@ export default {
 				},
 				airbnb: {
 					name: "Boolbnb",
-					description: "Breve descrizione del progetto",
+					description: "A platform where users can rent apartments. The host as a fully a functional dashboard with received messages and stats. Users who are looking for an apartment during their trip can use different filters to find the best solution for their needs.",
 					image: "airbnb.jpg",
 					hostedURL: "",
 					github: "https://github.com/Sof-97/boolbnb",
@@ -144,28 +144,28 @@ export default {
 			},
 			experiences: [
 				{
+					name: "Jr. Full Stack Web Developer Trainee",
+					where: "Boolean",
+					date: "01/2022 - 07/2022",
+					skills: ["Front-end Web Development", "Back-End Web Development", "Writing clean and efficient code", "Working in team", "Problem solving", "Worked with JavaScript, Vue.Js, Php, Laravel"]
+				},
+				{
 					name: "Photographer",
 					where: "Freelance",
 					date: "2016 - 2022",
-					skills: ["Working directly with the client", "Suite Adobe"]
+					skills: ["Suite Adobe", "Working directly with the client", "Event Photography"]
+				},
+				{
+					name: "Servizio Civile Universale",
+					where: "GOV",
+					date: "2020 - 2021",
+					skills: ["Teamwork", "Elderly support"]
 				},
 				{
 					name: "Waiter",
-					where: "Freelance",
-					date: "2016 - 2022",
-					skills: ["Working directly with the client", "Suite Adobe"]
-				},
-				{
-					name: "Photographer",
-					where: "Freelance",
-					date: "2016 - 2022",
-					skills: ["Working directly with the client", "Suite Adobe"]
-				},
-				{
-					name: "Photographer",
-					where: "Freelance",
-					date: "2016 - 2022",
-					skills: ["Working directly with the client", "Suite Adobe"]
+					where: "Various",
+					date: "2015 - 2019",
+					skills: ["Client satisfaction", "Active listening skills","Multitasking"]
 				}
 			]
 		};
