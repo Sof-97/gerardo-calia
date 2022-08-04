@@ -6,10 +6,11 @@
 				<h3 class="font-bold tracking-wide text-xl my-2">{{ e.name }}</h3>
 				<p class="text-slate-400 text-lg">{{ e.description }}</p>
 				<div class="my-2 flex flex-wrap">
-					<span class="mr-2 mt-1 py-1 px-2" v-for="t, i in e.technologies" :key="i">{{ t }}</span>
+					<span class="mr-2 mt-2 px-2" v-for="t, i in e.technologies" :key="i">{{ t }}</span>
 				</div>
-				<div>
-					<h5 class="font-bold">Take a look:</h5>
+				<div class="flex justify-end items-center mt-5">
+					<a class="mx-2 px-2" :href="e.github">GitHub</a>
+					<a class="mx-2 px-2" :href="e.hostedURL">Live</a>
 				</div>
 			</div>
 
@@ -30,7 +31,7 @@ export default {
 @import "../assets/variable";
 
 h3 {
-	color: $fucsia;
+	color: $green;
 	font-family: "IBM Plex Mono", monospace;
 }
 
@@ -40,6 +41,12 @@ img {
 
 span {
 	border: 0.2px solid $fucsia;
+	border-radius: 5px;
+}
+
+a {
+	background-color: #fff;
+	color: $fucsia;
 	border-radius: 5px;
 }
 </style>
