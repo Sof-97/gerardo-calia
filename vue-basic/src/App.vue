@@ -16,20 +16,30 @@
 				<ButtonComp text="Projects" link="#projects" class="my-1 green max-w-fit self-end"></ButtonComp>
 			</section>
 			<!-- Seconda sezione immagine + Bio grande e tecnologie -->
-			<section>
+			<section id="about" style="scroll-snap-align: center;">
 				<ImageComp></ImageComp>
 				<LongBioComp class="my-2"></LongBioComp>
-				<TechComp class="my-20"></TechComp>
+				<TechComp class="mt-20"></TechComp>
 			</section>
 			<!-- Cards Progetti -->
-			<section>
-				<ProjectsComp :projects="projects"></ProjectsComp>
+			<section class="mt-12">
+				<h2 class="w-11/12 mx-auto text-2xl mb-6 font-bold">Some Of My Projects</h2>
+				<ProjectsComp id="projects" :projects="projects"></ProjectsComp>
 			</section>
 			<!-- Esperienze lavorative -->
-			<section class="min-h-fit">
-				<h2>Esperienze lavorative</h2>
+			<section class="my-12">
+				<h2 class="w-11/12 mx-auto text-2xl mb-6 font-bold">Work Experience</h2>
+				<ExperienceComp :experiences="experiences"></ExperienceComp>
+			</section>
+			<!-- Contact Form -->
+			<section>
+				<h2 class="w-11/12 mx-auto text-2xl mb-6 font-bold">Get In Touch</h2>
+				<ContactComp></ContactComp>
 			</section>
 		</main>
+		<footer class="flex justify-center py-5">
+			<div class="font-mono">//Gerardo Calia//</div>
+		</footer>
 		<email-comp class="email fixed hidden md:flex"></email-comp>
 		<social-comp id="socialY" class="social fixed hidden"></social-comp>
 		<social-comp id="socialX" class="social fixed hidden md:flex"></social-comp>
@@ -47,6 +57,8 @@ import ButtonComp from "./components/ButtonComp.vue";
 import LongBioComp from "./components/LongBioComp.vue";
 import TechComp from "./components/TechComp.vue";
 import ProjectsComp from "./components/ProjectsComp.vue";
+import ExperienceComp from "./components/ExperienceComp.vue";
+import ContactComp from "./components/ContactComp.vue";
 
 export default {
 	components: {
@@ -59,7 +71,9 @@ export default {
 		ButtonComp,
 		LongBioComp,
 		TechComp,
-		ProjectsComp
+		ProjectsComp,
+		ExperienceComp,
+		ContactComp
 	},
 	name: "App",
 	data() {
@@ -130,6 +144,32 @@ export default {
 					technologies: ["HTML", "CSS", "Scss", "JavaScript", "VueJs", "Php", "Laravel"],
 				},
 			},
+			experiences: [
+				{
+					name: "Photographer",
+					where: "Freelance",
+					date: "2016 - 2022",
+					skills: ["Working directly with the client", "Suite Adobe"]
+				},
+				{
+					name: "Waiter",
+					where: "Freelance",
+					date: "2016 - 2022",
+					skills: ["Working directly with the client", "Suite Adobe"]
+				},
+				{
+					name: "Photographer",
+					where: "Freelance",
+					date: "2016 - 2022",
+					skills: ["Working directly with the client", "Suite Adobe"]
+				},
+				{
+					name: "Photographer",
+					where: "Freelance",
+					date: "2016 - 2022",
+					skills: ["Working directly with the client", "Suite Adobe"]
+				}
+			]
 		};
 	},
 	methods: {},
@@ -180,6 +220,11 @@ header {
 	top: 0;
 	width: 100%;
 	background-color: $blue;
+}
+
+h2 {
+	font-family: 'montserrat', sans-serif;
+	color: $fucsia;
 }
 
 section {
