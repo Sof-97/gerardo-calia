@@ -1,3 +1,20 @@
 $blue: #1c2735;
 $green: #11a478;
 $fucsia: #dc7ea4;
+
+.contact-form{
+    label {
+        font-family: "IBM Plex Mono", monospace;
+    }
+    
+    input,
+    textarea {
+        border-radius: 5px;
+    }
+    
+    button {
+        border-radius: 5px;
+        font-family: "IBM Plex Mono", monospace;
+        background-color: $green;
+    }
+}

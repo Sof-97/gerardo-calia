@@ -1,19 +1,20 @@
 <template>
 	<div>
-		<header class="fixed z-10">
-			<div class="flex justify-between w-11/12 mx-auto pt-3 pb-1">
+		<header class="fixed z-10 w-full">
+			<div class="flex justify-between w-11/12 mx-auto pt-3 pb-1 sm:p-0">
 				<a href="/" class="self-center">
 					<img src="./assets/img/D20.svg" alt="little image of a d20" style="height: 50px" />
 				</a>
 				<nav-bar></nav-bar>
 			</div>
 		</header>
-		<main>
+		<main class="lg:mt-12">
 			<!-- Prima sezione piccola bio e hello Comp -->
-			<section class="flex flex-col w-10/12 pt-20 pb-32 mx-auto">
-				<HelloComp class="mb-12"></HelloComp>
-				<IntroComp class="mb-8"></IntroComp>
-				<ButtonComp text="Projects" link="#projects" class="my-1 green max-w-fit self-end"></ButtonComp>
+			<section class="flex flex-col w-10/12 pt-20 sm:pt-48 pb-32 mx-auto">
+				<HelloComp class="mb-12 sm:ml-8"></HelloComp>
+				<IntroComp class="mb-8 sm:w-1/2 sm:mr-14 sm:mt-8 sm:self-end"></IntroComp>
+				<ButtonComp text="Projects" link="#projects" class="my-1 green max-w-fit sm:mr-14 self-end">
+				</ButtonComp>
 			</section>
 			<!-- Seconda sezione immagine + Bio grande e tecnologie -->
 			<section id="about" style="scroll-snap-align: center;">
@@ -22,24 +23,26 @@
 				<TechComp class="mt-20"></TechComp>
 			</section>
 			<!-- Cards Progetti -->
-			<section class="mt-12">
-				<h2 class="w-11/12 mx-auto text-2xl mb-6 font-bold">Some Of My Projects</h2>
+			<section class="mt-24">
+				<h2 class="w-11/12 mx-auto text-2xl mb-6 xl:mb-12 font-bold text-center xl:text-3xl xl:tracking-wider">
+					Some Of My Projects</h2>
 				<ProjectsComp id="projects" :projects="projects"></ProjectsComp>
 			</section>
 			<!-- Esperienze lavorative -->
-			<section class="my-12">
-				<h2 class="w-11/12 mx-auto text-2xl mb-6 font-bold">Work Experience</h2>
+			<section id="experience" class="my-24">
+				<h2 class="w-11/12 mx-auto text-2xl mb-6 xl:mb-12 font-bold text-center xl:text-3xl xl:tracking-wider">
+					Work Experience</h2>
 				<ExperienceComp :experiences="experiences"></ExperienceComp>
 			</section>
 			<!-- Contact Form -->
-			<section>
-				<h2 class="w-11/12 mx-auto text-2xl mb-6 font-bold">Get In Touch</h2>
-				<ContactComp></ContactComp>
+			<section id="contacts">
+				<h2 class="w-11/12 mx-auto text-2xl mb-6 xl:mb-12 font-bold text-center xl:text-3xl xl:tracking-wider">
+					Get In Touch</h2>
 			</section>
 		</main>
-		<email-comp class="email fixed hidden md:flex"></email-comp>
-		<social-comp id="socialY" class="social fixed hidden"></social-comp>
-		<social-comp id="socialX" class="social fixed hidden md:flex"></social-comp>
+		<email-comp class="email fixed hidden "></email-comp>
+		<social-comp id="socialY" class="social  hidden"></social-comp>
+		<social-comp id="socialX" class="social  hidden"></social-comp>
 	</div>
 </template>
 
@@ -55,7 +58,6 @@ import LongBioComp from "./components/LongBioComp.vue";
 import TechComp from "./components/TechComp.vue";
 import ProjectsComp from "./components/ProjectsComp.vue";
 import ExperienceComp from "./components/ExperienceComp.vue";
-import ContactComp from "./components/ContactComp.vue";
 
 export default {
 	components: {
@@ -70,7 +72,6 @@ export default {
 		TechComp,
 		ProjectsComp,
 		ExperienceComp,
-		ContactComp
 	},
 	name: "App",
 	data() {
@@ -78,7 +79,7 @@ export default {
 			projects: {
 				dropbox: {
 					name: "Dropbox",
-					description: "Breve descrizione del progetto",
+					description: "The Dropobox landing page built with only HTML & CSS.",
 					image: "dropbox.png",
 					hostedURL: "https://dropbpox-landingpage.netlify.app",
 					github: "https://github.com/Sof-97/htmlcss-dropbox",
@@ -86,7 +87,7 @@ export default {
 				},
 				discord: {
 					name: "Discord",
-					description: "Breve descrizione del progetto",
+					description: "The Discord landing page built with only HTML & CSS.",
 					image: "discord.png",
 					hostedURL: "https://discord-landingpage.netlify.app",
 					github: "https://github.com/Sof-97/htmlcss-discord",
@@ -94,7 +95,7 @@ export default {
 				},
 				playstation: {
 					name: "Playstation",
-					description: "Breve descrizione del progetto",
+					description: "The PlayStation landing page built with HTML & CSS. The page is completely responsive and mobile ready.",
 					image: "playstation.png",
 					hostedURL: "https://playstation-landingpage.netlify.app",
 					github: "https://github.com/Sof-97/htmlcss-playstation",
@@ -102,15 +103,15 @@ export default {
 				},
 				spotify: {
 					name: "Spotify",
-					description: "Breve descrizione del progetto",
+					description: "The homepage of the Spotify Web App, responsive and mobile ready.",
 					image: "spotify.png",
 					hostedURL: "https://spotifysof.netlify.app",
 					github: "https://github.com/Sof-97/spotifyweb-replica",
 					technologies: ["HTML", "CSS"],
 				},
 				netflix: {
-					name: "Netflix",
-					description: "Breve descrizione del progetto",
+					name: "Netflix Catalogue",
+					description: "A dynamic page where explore and search for movies and tv series. Built with Vue.js and the help of Axios.",
 					image: "netflix.png",
 					hostedURL: "https://boolfix-cataloug.netlify.app",
 					github: "https://github.com/Sof-97/vue-boolflix",
@@ -118,7 +119,7 @@ export default {
 				},
 				wordpress: {
 					name: "Tema Wordpress",
-					description: "Breve descrizione del progetto",
+					description: "A completely modular custom WordPress theme, built with custom Scss and Vue.Js. All the components are reusable and dynamic",
 					image: "wordpress_theme.png",
 					hostedURL: "https://wordpress-theme-finance.netlify.app",
 					github: "https://github.com/Sof-97/wordpress-theme",
@@ -126,7 +127,7 @@ export default {
 				},
 				whatsapp: {
 					name: "Whatsapp",
-					description: "Breve descrizione del progetto",
+					description: "A clone of the Whatsapp Web App where you can send messages to your contacts and automatic timed replies.",
 					image: "boolzap.png",
 					hostedURL: "https://boolzap-sof.netlify.app",
 					github: "https://github.com/Sof-97/vue-boolzapp",
@@ -134,7 +135,7 @@ export default {
 				},
 				airbnb: {
 					name: "Boolbnb",
-					description: "Breve descrizione del progetto",
+					description: "A platform where users can rent apartments. The host as a fully a functional dashboard with received messages and stats. Users who are looking for an apartment during their trip can use different filters to find the best solution for their needs.",
 					image: "airbnb.jpg",
 					hostedURL: "",
 					github: "https://github.com/Sof-97/boolbnb",
@@ -143,28 +144,28 @@ export default {
 			},
 			experiences: [
 				{
+					name: "Jr. Full Stack Web Developer Trainee",
+					where: "Boolean",
+					date: "01/2022 - 07/2022",
+					skills: ["Front-end Web Development", "Back-End Web Development", "Writing clean and efficient code", "Working in team", "Problem solving", "Worked with JavaScript, Vue.Js, Php, Laravel"]
+				},
+				{
 					name: "Photographer",
 					where: "Freelance",
 					date: "2016 - 2022",
-					skills: ["Working directly with the client", "Suite Adobe"]
+					skills: ["Suite Adobe", "Working directly with the client", "Event Photography"]
+				},
+				{
+					name: "Servizio Civile Universale",
+					where: "GOV",
+					date: "2020 - 2021",
+					skills: ["Teamwork", "Elderly support"]
 				},
 				{
 					name: "Waiter",
-					where: "Freelance",
-					date: "2016 - 2022",
-					skills: ["Working directly with the client", "Suite Adobe"]
-				},
-				{
-					name: "Photographer",
-					where: "Freelance",
-					date: "2016 - 2022",
-					skills: ["Working directly with the client", "Suite Adobe"]
-				},
-				{
-					name: "Photographer",
-					where: "Freelance",
-					date: "2016 - 2022",
-					skills: ["Working directly with the client", "Suite Adobe"]
+					where: "Various",
+					date: "2015 - 2019",
+					skills: ["Client satisfaction", "Active listening skills","Multitasking"]
 				}
 			]
 		};
@@ -178,32 +179,32 @@ export default {
 		// intersection observer is watching the social components and when they are intersecting, it is
 		// adding the class blur-out-contract to socialX and focus-in-expand to socialY. It is also adding
 		// the class hidden to socialX and removing the class hidden from socialY.
-		window.onscroll = function () {
-			if (scrollY > 150) {
-				const socialX = document.getElementById("socialX");
-				const socialY = document.getElementById("socialY");
-				const observerX = new IntersectionObserver(entries => {
-					entries.forEach(entry => {
-						entry.target.classList.toggle("blur-out-contract", entry.isIntersecting);
-						setTimeout(() => {
-							entry.target.classList.add("hidden", entry.isIntersecting);
-						}, 2000);
-					});
-				});
-				const observerY = new IntersectionObserver(entries => {
-					if (window.innerWidth > 600) {
-						entries.forEach(entry => {
-							setTimeout(() => {
-								entry.target.classList.remove("hidden", entry.isIntersecting);
-								entry.target.classList.add("focus-in-expand", entry.isIntersecting);
-							}, 1000);
-						});
-					}
-				});
-				observerY.observe(socialY);
-				observerX.observe(socialX);
-			}
-		};
+		// window.onscroll = function () {
+		// 	if (scrollY > 150) {
+		// 		const socialX = document.getElementById("socialX");
+		// 		const socialY = document.getElementById("socialY");
+		// 		const observerX = new IntersectionObserver(entries => {
+		// 			entries.forEach(entry => {
+		// 				entry.target.classList.toggle("blur-out-contract", entry.isIntersecting);
+		// 				setTimeout(() => {
+		// 					entry.target.classList.add("hidden", entry.isIntersecting);
+		// 				}, 2000);
+		// 			});
+		// 		});
+		// 		const observerY = new IntersectionObserver(entries => {
+		// 			if (window.innerWidth > 600) {
+		// 				entries.forEach(entry => {
+		// 					setTimeout(() => {
+		// 						entry.target.classList.remove("hidden", entry.isIntersecting);
+		// 						entry.target.classList.add("focus-in-expand", entry.isIntersecting);
+		// 					}, 1000);
+		// 				});
+		// 			}
+		// 		});
+		// 		observerY.observe(socialY);
+		// 		observerX.observe(socialX);
+		// 	}
+		// };
 	},
 };
 </script>
@@ -215,21 +216,12 @@ export default {
 header {
 	position: absolute;
 	top: 0;
-	width: 100%;
 	background-color: $blue;
 }
 
 h2 {
 	font-family: 'montserrat', sans-serif;
 	color: $fucsia;
-}
-
-section {
-	min-height: 100vh;
-
-	@media screen and (max-width:1024px) {
-		min-height: auto;
-	}
 }
 
 .email {

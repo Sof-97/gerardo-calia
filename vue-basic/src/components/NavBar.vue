@@ -63,7 +63,6 @@ nav {
 	ul {
 		li {
 			padding: 10px;
-			margin-right: 1rem;
 
 			span {
 				color: $green;
