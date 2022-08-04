@@ -1,6 +1,6 @@
 <template>
     <div class="w-10/12 mx-auto">
-        <form name="contact" method="POST" data-netlify="true">
+        <form name="contact" method="POST" data-netlify="true" netlify>
             <div class="mt-4">
                 <label>Your Name:</label>
                 <input class="w-full mt-1 p-2" type="text" name="name" />
