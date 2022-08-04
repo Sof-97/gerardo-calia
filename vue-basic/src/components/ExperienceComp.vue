@@ -6,7 +6,7 @@
                         e.name
                 }}</span>
         </div>
-        <div class="mt-6 w-9/12 mx-auto h-screen">
+        <div class="mt-6 w-9/12 mx-auto">
             <h4 class="font-bold tracking-widest mt-4 text-2xl">{{ experiences[selected].name }}</h4>
             <h5 class="my-1 ml-2 text-base">{{ experiences[selected].where }}</h5>
             <p class="text-sm ml-2">{{ experiences[selected].date }}</p>

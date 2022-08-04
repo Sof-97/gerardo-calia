@@ -27,11 +27,19 @@
 				<ProjectsComp id="projects" :projects="projects"></ProjectsComp>
 			</section>
 			<!-- Esperienze lavorative -->
-			<section class="mt-12">
+			<section class="my-12">
 				<h2 class="w-11/12 mx-auto text-2xl mb-6 font-bold">Work Experience</h2>
 				<ExperienceComp :experiences="experiences"></ExperienceComp>
 			</section>
+			<!-- Contact Form -->
+			<section>
+				<h2 class="w-11/12 mx-auto text-2xl mb-6 font-bold">Get In Touch</h2>
+				<ContactComp></ContactComp>
+			</section>
 		</main>
+		<footer class="flex justify-center py-5">
+			<div class="font-mono">//Gerardo Calia//</div>
+		</footer>
 		<email-comp class="email fixed hidden md:flex"></email-comp>
 		<social-comp id="socialY" class="social fixed hidden"></social-comp>
 		<social-comp id="socialX" class="social fixed hidden md:flex"></social-comp>
@@ -50,6 +58,7 @@ import LongBioComp from "./components/LongBioComp.vue";
 import TechComp from "./components/TechComp.vue";
 import ProjectsComp from "./components/ProjectsComp.vue";
 import ExperienceComp from "./components/ExperienceComp.vue";
+import ContactComp from "./components/ContactComp.vue";
 
 export default {
 	components: {
@@ -63,7 +72,8 @@ export default {
 		LongBioComp,
 		TechComp,
 		ProjectsComp,
-		ExperienceComp
+		ExperienceComp,
+		ContactComp
 	},
 	name: "App",
 	data() {
