@@ -165,7 +165,7 @@ export default {
 					name: "Waiter",
 					where: "Various",
 					date: "2015 - 2019",
-					skills: ["Client satisfaction", "Active listening skills","Multitasking"]
+					skills: ["Client satisfaction", "Active listening skills", "Multitasking"]
 				}
 			]
 		};
