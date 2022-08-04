@@ -1,10 +1,12 @@
 <template>
 	<div>
-		<header class="flex justify-between content-center">
-			<a href="https://www.gerardocalia.it" class="self-center px-8">
-				<img src="./assets/img/D20.svg" alt="little image of a d20" style="height: 50px" />
-			</a>
-			<nav-bar></nav-bar>
+		<header class="fixed z-10">
+			<div class="flex justify-between w-11/12 mx-auto pt-3 pb-1">
+				<a href="/" class="self-center">
+					<img src="./assets/img/D20.svg" alt="little image of a d20" style="height: 50px" />
+				</a>
+				<nav-bar></nav-bar>
+			</div>
 		</header>
 		<main>
 			<!-- Prima sezione piccola bio e hello Comp -->
@@ -17,17 +19,15 @@
 			<section>
 				<ImageComp></ImageComp>
 				<LongBioComp class="my-2"></LongBioComp>
-				<TechComp class="mt-8"></TechComp>
+				<TechComp class="my-20"></TechComp>
+			</section>
+			<!-- Cards Progetti -->
+			<section>
+				<ProjectsComp :projects="projects"></ProjectsComp>
 			</section>
 			<!-- Esperienze lavorative -->
 			<section class="min-h-fit">
 				<h2>Esperienze lavorative</h2>
-			</section>
-			<!-- Cards Progetti -->
-			<section>
-				<div class="flex flex-wrap">
-					<ProjCardComp :key="i" v-for="(proj, i) in projects" :data="proj"></ProjCardComp>
-				</div>
 			</section>
 		</main>
 		<email-comp class="email fixed hidden md:flex"></email-comp>
@@ -46,7 +46,7 @@ import IntroComp from "./components/IntroComp.vue";
 import ButtonComp from "./components/ButtonComp.vue";
 import LongBioComp from "./components/LongBioComp.vue";
 import TechComp from "./components/TechComp.vue";
-import ProjCardComp from "./components/ProjCardComp.vue";
+import ProjectsComp from "./components/ProjectsComp.vue";
 
 export default {
 	components: {
@@ -59,7 +59,7 @@ export default {
 		ButtonComp,
 		LongBioComp,
 		TechComp,
-		ProjCardComp,
+		ProjectsComp
 	},
 	name: "App",
 	data() {
@@ -67,7 +67,7 @@ export default {
 			projects: {
 				dropbox: {
 					name: "Dropbox",
-					description: "",
+					description: "Breve descrizione del progetto",
 					image: "dropbox.png",
 					hostedURL: "https://dropbpox-landingpage.netlify.app",
 					github: "https://github.com/Sof-97/htmlcss-dropbox",
@@ -75,7 +75,7 @@ export default {
 				},
 				discord: {
 					name: "Discord",
-					description: "",
+					description: "Breve descrizione del progetto",
 					image: "discord.png",
 					hostedURL: "https://discord-landingpage.netlify.app",
 					github: "https://github.com/Sof-97/htmlcss-discord",
@@ -83,7 +83,7 @@ export default {
 				},
 				playstation: {
 					name: "Playstation",
-					description: "",
+					description: "Breve descrizione del progetto",
 					image: "playstation.png",
 					hostedURL: "https://playstation-landingpage.netlify.app",
 					github: "https://github.com/Sof-97/htmlcss-playstation",
@@ -91,7 +91,7 @@ export default {
 				},
 				spotify: {
 					name: "Spotify",
-					description: "",
+					description: "Breve descrizione del progetto",
 					image: "spotify.png",
 					hostedURL: "https://spotifysof.netlify.app",
 					github: "https://github.com/Sof-97/spotifyweb-replica",
@@ -99,15 +99,15 @@ export default {
 				},
 				netflix: {
 					name: "Netflix",
-					description: "https://github.com/Sof-97/vue-boolflix",
+					description: "Breve descrizione del progetto",
 					image: "netflix.png",
 					hostedURL: "https://boolfix-cataloug.netlify.app",
-					github: "",
+					github: "https://github.com/Sof-97/vue-boolflix",
 					technologies: ["HTML", "CSS", "Scss", "JavaScript", "VueJs"],
 				},
 				wordpress: {
 					name: "Tema Wordpress",
-					description: "",
+					description: "Breve descrizione del progetto",
 					image: "wordpress_theme.png",
 					hostedURL: "https://wordpress-theme-finance.netlify.app",
 					github: "https://github.com/Sof-97/wordpress-theme",
@@ -115,7 +115,7 @@ export default {
 				},
 				whatsapp: {
 					name: "Whatsapp",
-					description: "",
+					description: "Breve descrizione del progetto",
 					image: "boolzap.png",
 					hostedURL: "https://boolzap-sof.netlify.app",
 					github: "https://github.com/Sof-97/vue-boolzapp",
@@ -123,7 +123,7 @@ export default {
 				},
 				airbnb: {
 					name: "Boolbnb",
-					description: "",
+					description: "Breve descrizione del progetto",
 					image: "airbnb.jpg",
 					hostedURL: "",
 					github: "https://github.com/Sof-97/boolbnb",
@@ -179,6 +179,7 @@ header {
 	position: absolute;
 	top: 0;
 	width: 100%;
+	background-color: $blue;
 }
 
 section {

@@ -14,13 +14,13 @@
 
 		<!-- Menu Mobile -->
 		<div class="dropdown dropdown-end md:hidden">
-			<label tabindex="0" class="btn m-4 bg-transparent">Menu</label>
+			<label tabindex="0" class="border h-full w-full block px-3 py-2 bg-transparent">Menu</label>
 			<ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-44">
 				<li class="text-white">
 					<a href=""><span>01.</span> About</a>
 				</li>
 				<li class="text-white">
-					<a href=""><span>02.</span> Work</a>
+					<a href=""><span>02.</span> Works</a>
 				</li>
 				<li class="text-white">
 					<a href=""><span>03.</span> Expertise</a>
@@ -68,6 +68,7 @@ nav {
 	label {
 		border-color: $green;
 		color: $green;
+		border-radius: 5px;
 	}
 
 	ul {
