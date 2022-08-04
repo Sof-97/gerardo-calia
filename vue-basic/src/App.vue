@@ -34,7 +34,6 @@
 			<!-- Contact Form -->
 			<section>
 				<h2 class="w-11/12 mx-auto text-2xl mb-6 font-bold">Get In Touch</h2>
-				<ContactComp></ContactComp>
 			</section>
 		</main>
 		<email-comp class="email fixed hidden md:flex"></email-comp>
@@ -55,7 +54,6 @@ import LongBioComp from "./components/LongBioComp.vue";
 import TechComp from "./components/TechComp.vue";
 import ProjectsComp from "./components/ProjectsComp.vue";
 import ExperienceComp from "./components/ExperienceComp.vue";
-import ContactComp from "./components/ContactComp.vue";
 
 export default {
 	components: {
@@ -70,7 +68,6 @@ export default {
 		TechComp,
 		ProjectsComp,
 		ExperienceComp,
-		ContactComp
 	},
 	name: "App",
 	data() {
