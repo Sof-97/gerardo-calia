@@ -37,9 +37,6 @@
 				<ContactComp></ContactComp>
 			</section>
 		</main>
-		<footer class="flex justify-center py-5">
-			<div class="font-mono">//Gerardo Calia//</div>
-		</footer>
 		<email-comp class="email fixed hidden md:flex"></email-comp>
 		<social-comp id="socialY" class="social fixed hidden"></social-comp>
 		<social-comp id="socialX" class="social fixed hidden md:flex"></social-comp>
