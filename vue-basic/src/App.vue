@@ -1,19 +1,20 @@
 <template>
 	<div>
-		<header class="fixed z-10">
-			<div class="flex justify-between w-11/12 mx-auto pt-3 pb-1">
+		<header class="fixed z-10 w-full">
+			<div class="flex justify-between w-11/12 mx-auto pt-3 pb-1 sm:p-0">
 				<a href="/" class="self-center">
 					<img src="./assets/img/D20.svg" alt="little image of a d20" style="height: 50px" />
 				</a>
 				<nav-bar></nav-bar>
 			</div>
 		</header>
-		<main>
+		<main class="lg:mt-12">
 			<!-- Prima sezione piccola bio e hello Comp -->
-			<section class="flex flex-col w-10/12 pt-20 pb-32 mx-auto">
-				<HelloComp class="mb-12"></HelloComp>
-				<IntroComp class="mb-8"></IntroComp>
-				<ButtonComp text="Projects" link="#projects" class="my-1 green max-w-fit self-end"></ButtonComp>
+			<section class="flex flex-col w-10/12 pt-20 sm:pt-48 pb-32 mx-auto">
+				<HelloComp class="mb-12 sm:ml-8"></HelloComp>
+				<IntroComp class="mb-8 sm:w-1/2 sm:mr-14 sm:mt-8 sm:self-end"></IntroComp>
+				<ButtonComp text="Projects" link="#projects" class="my-1 green max-w-fit sm:mr-14 self-end">
+				</ButtonComp>
 			</section>
 			<!-- Seconda sezione immagine + Bio grande e tecnologie -->
 			<section id="about" style="scroll-snap-align: center;">
@@ -22,23 +23,26 @@
 				<TechComp class="mt-20"></TechComp>
 			</section>
 			<!-- Cards Progetti -->
-			<section class="mt-12">
-				<h2 class="w-11/12 mx-auto text-2xl mb-6 font-bold">Some Of My Projects</h2>
+			<section class="mt-24">
+				<h2 class="w-11/12 mx-auto text-2xl mb-6 xl:mb-12 font-bold text-center xl:text-3xl xl:tracking-wider">
+					Some Of My Projects</h2>
 				<ProjectsComp id="projects" :projects="projects"></ProjectsComp>
 			</section>
 			<!-- Esperienze lavorative -->
-			<section class="my-12">
-				<h2 class="w-11/12 mx-auto text-2xl mb-6 font-bold">Work Experience</h2>
+			<section id="experience" class="my-24">
+				<h2 class="w-11/12 mx-auto text-2xl mb-6 xl:mb-12 font-bold text-center xl:text-3xl xl:tracking-wider">
+					Work Experience</h2>
 				<ExperienceComp :experiences="experiences"></ExperienceComp>
 			</section>
 			<!-- Contact Form -->
-			<section>
-				<h2 class="w-11/12 mx-auto text-2xl mb-6 font-bold">Get In Touch</h2>
+			<section id="contacts">
+				<h2 class="w-11/12 mx-auto text-2xl mb-6 xl:mb-12 font-bold text-center xl:text-3xl xl:tracking-wider">
+					Get In Touch</h2>
 			</section>
 		</main>
-		<email-comp class="email fixed hidden md:flex"></email-comp>
-		<social-comp id="socialY" class="social fixed hidden"></social-comp>
-		<social-comp id="socialX" class="social fixed hidden md:flex"></social-comp>
+		<email-comp class="email fixed hidden "></email-comp>
+		<social-comp id="socialY" class="social  hidden"></social-comp>
+		<social-comp id="socialX" class="social  hidden"></social-comp>
 	</div>
 </template>
 
@@ -175,32 +179,32 @@ export default {
 		// intersection observer is watching the social components and when they are intersecting, it is
 		// adding the class blur-out-contract to socialX and focus-in-expand to socialY. It is also adding
 		// the class hidden to socialX and removing the class hidden from socialY.
-		window.onscroll = function () {
-			if (scrollY > 150) {
-				const socialX = document.getElementById("socialX");
-				const socialY = document.getElementById("socialY");
-				const observerX = new IntersectionObserver(entries => {
-					entries.forEach(entry => {
-						entry.target.classList.toggle("blur-out-contract", entry.isIntersecting);
-						setTimeout(() => {
-							entry.target.classList.add("hidden", entry.isIntersecting);
-						}, 2000);
-					});
-				});
-				const observerY = new IntersectionObserver(entries => {
-					if (window.innerWidth > 600) {
-						entries.forEach(entry => {
-							setTimeout(() => {
-								entry.target.classList.remove("hidden", entry.isIntersecting);
-								entry.target.classList.add("focus-in-expand", entry.isIntersecting);
-							}, 1000);
-						});
-					}
-				});
-				observerY.observe(socialY);
-				observerX.observe(socialX);
-			}
-		};
+		// window.onscroll = function () {
+		// 	if (scrollY > 150) {
+		// 		const socialX = document.getElementById("socialX");
+		// 		const socialY = document.getElementById("socialY");
+		// 		const observerX = new IntersectionObserver(entries => {
+		// 			entries.forEach(entry => {
+		// 				entry.target.classList.toggle("blur-out-contract", entry.isIntersecting);
+		// 				setTimeout(() => {
+		// 					entry.target.classList.add("hidden", entry.isIntersecting);
+		// 				}, 2000);
+		// 			});
+		// 		});
+		// 		const observerY = new IntersectionObserver(entries => {
+		// 			if (window.innerWidth > 600) {
+		// 				entries.forEach(entry => {
+		// 					setTimeout(() => {
+		// 						entry.target.classList.remove("hidden", entry.isIntersecting);
+		// 						entry.target.classList.add("focus-in-expand", entry.isIntersecting);
+		// 					}, 1000);
+		// 				});
+		// 			}
+		// 		});
+		// 		observerY.observe(socialY);
+		// 		observerX.observe(socialX);
+		// 	}
+		// };
 	},
 };
 </script>
@@ -212,21 +216,12 @@ export default {
 header {
 	position: absolute;
 	top: 0;
-	width: 100%;
 	background-color: $blue;
 }
 
 h2 {
 	font-family: 'montserrat', sans-serif;
 	color: $fucsia;
-}
-
-section {
-	min-height: 100vh;
-
-	@media screen and (max-width:1024px) {
-		min-height: auto;
-	}
 }
 
 .email {

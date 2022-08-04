@@ -1,5 +1,5 @@
 <template>
-	<p class="w-9/12 mx-auto text-slate-400 text-lg ">
+	<p class="w-9/12 mx-auto text-slate-400 text-lg xl:text-xl">
 		Questa è una bio molto lunga dove andranno tutte le cose veramente belle pazze. Lorem ipsum dolor sit amet,
 		consectetur adipisicing elit. Illum quia, cum officia molestiae eum incidunt inventore necessitatibus, libero
 		beatae nobis officiis accusamus sunt alias natus deserunt quam repellendus, iure earum.
@@ -11,3 +11,8 @@ export default {
 	name: "LongBioComp",
 };
 </script>
+<style lang="scss" scoped>
+p{
+	font-family: 'montserrat', sans-serif;
+}
+</style>

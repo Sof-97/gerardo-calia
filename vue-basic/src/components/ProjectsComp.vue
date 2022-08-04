@@ -1,5 +1,5 @@
 <template>
-	<div class="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-3 grid-auto gap-14">
+	<div class="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-auto gap-14 xl:gap-22">
 		<div :key="i" v-for="e, i in projects">
 			<img :src="require(`@/assets/img/projects/${e.image}`)" :alt="e.name">
 			<div>
@@ -48,5 +48,11 @@ a {
 	background-color: #fff;
 	color: $fucsia;
 	border-radius: 5px;
+}
+
+p,
+a,
+span {
+	font-family: "montserrat", sans-serif;
 }
 </style>
