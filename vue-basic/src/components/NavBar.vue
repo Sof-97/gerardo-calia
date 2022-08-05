@@ -15,7 +15,7 @@
 					<a href="#contacts"><span>04.</span> Contact</a>
 				</li>
 				<li>
-					<ButtonComp text="Resume" link="#"></ButtonComp>
+					<ButtonComp text="Resume" link="/pdf/Gerardo_Calia_CV.pdf" download></ButtonComp>
 				</li>
 			</ul>
 		</nav>
@@ -37,7 +37,7 @@
 					<a href="#contacts"><span>04.</span> Contact</a>
 				</li>
 				<li>
-					<ButtonComp text="Resume" link="#"></ButtonComp>
+					<ButtonComp text="Resume" link="/pdf/Gerardo_Calia_CV.pdf" download></ButtonComp>
 				</li>
 			</ul>
 		</div>
