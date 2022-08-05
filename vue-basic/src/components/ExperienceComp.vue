@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="tabs w-full flex-nowrap overflow-y-scroll">
+        <div class="tabs w-full flex-nowrap overflow-y-scrollsssssssssssss">
             <span class="tab tab-bordered slider-button text-base xl:text-lg sm:grow"
                 :class="[{ 'tab-active': i == selected }]" :key="i" v-for="e, i in experiences" @click="selected = i">{{
                         e.name
